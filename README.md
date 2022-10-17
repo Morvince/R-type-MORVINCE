@@ -40,6 +40,7 @@ cd -
 on Windows:
 ```sh
 # Create the build directory
+chmod +x setup_conan
 ./setup_conan.sh
 
 # Configure the project
