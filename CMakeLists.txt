@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 add_compile_options("-Wall" "-pedantic" "$<$<CONFIG:RELEASE>:-O3;>"
                     "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>")
 
+
+include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
+conan_basic_setup()
+
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 if(CMAKE_COMPILER_IS_GNUCXX)

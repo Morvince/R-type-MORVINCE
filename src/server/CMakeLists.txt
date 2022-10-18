@@ -9,9 +9,6 @@ source_group("" FILES ${SRC})
 
 set(TARGET_NAME r-type_server)
 
-include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
-conan_basic_setup()
-
 add_executable(${TARGET_NAME} ${SRC})
 
 target_link_libraries(${TARGET_NAME} Network)

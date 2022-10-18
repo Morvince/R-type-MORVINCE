@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include <include/SFML/Graphics.hpp>
-#include <include/SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include "../../Ecs/Enum.hpp"
 #include "../../Ecs/Registry.hpp"
 #include "SpritesManager.hpp"

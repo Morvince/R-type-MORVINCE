@@ -41,4 +41,4 @@ jobs:
           export CONAN_SYSREQUIRES_SUDO="1"
           cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-11 ${{ github.workspace }}
           cmake ${{ github.workspace }} -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
-          cmake --build ${{ github.workspace }}/build
+          cmake --build .
