@@ -30,7 +30,7 @@ jobs:
           conan profile new default --detect
           echo [conf]\ntools.system.package_manager:sudo=True\ntools.system.package_manager:mode=install >> ~/.conan/profiles/default
           mkdir build && cd build
-          conan install ${{ github.workspace }} --build=missing  -c tools.system.package_manager:mode=install
+          conan install ${{ github.workspace }} -c tools.system.package_manager:mode=install --build=missing 
 
       - name: Build Test Linux
         shell: bash
