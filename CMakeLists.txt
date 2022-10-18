@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.17.0)
 
 
 set(CMAKE_BUILD_TYPE Release)
-project(R-Type)
+
+project(R-Type LANGUAGES CXX)
+
+
 
 add_compile_options("-Wall" "-pedantic" "$<$<CONFIG:RELEASE>:-O3;>"
                     "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>")
