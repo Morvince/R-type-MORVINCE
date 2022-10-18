@@ -35,6 +35,7 @@ jobs:
       - name: Build Test Linux
         shell: bash
         run: |
+          cd build
           export CONAN_SYSREQUIRES_MODE="enabled"
           export CONAN_SYSREQUIRES_SUDO="1"
           cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-11 ${{ github.workspace }}
