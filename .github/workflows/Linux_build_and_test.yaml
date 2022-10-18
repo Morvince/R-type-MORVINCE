@@ -27,17 +27,17 @@ jobs:
       - name: Set and Update conan profile
         shell: bash
         run: |
-          conan profile new default --detect
-          echo [conf]\ntools.system.package_manager:sudo=True\ntools.system.package_manager:mode=install >> ~/.conan/profiles/default
+          sudo conan profile new default --detect
+          sudo echo [conf]\ntools.system.package_manager:sudo=True\ntools.system.package_manager:mode=install >> ~/.conan/profiles/default
           mkdir build && cd build
-          conan install ${{ github.workspace }} -c tools.system.package_manager:mode=install --build=missing 
+          sudo conan install ${{ github.workspace }} -c tools.system.package_manager:mode=install --build=missing 
 
       - name: Build Test Linux
         shell: bash
         run: |
           cd build
-          export CONAN_SYSREQUIRES_MODE="enabled"
-          export CONAN_SYSREQUIRES_SUDO="1"
+          sudo export CONAN_SYSREQUIRES_MODE="enabled"
+          sudo export CONAN_SYSREQUIRES_SUDO="1"
           cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-11 ${{ github.workspace }}
           cmake ${{ github.workspace }} -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
           cmake --build ${{ github.workspace }}/build
