@@ -31,7 +31,6 @@ jobs:
         shell: powershell
         run: |
           conan profile new default --detect
-          conan profile update settings.compiler.libcxx=libstdc++11 default
           conan config set tools.system.package_manager:mode=install
 
       - name: Check for Dependencies (Install)
