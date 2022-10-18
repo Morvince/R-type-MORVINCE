@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           sudo conan profile new default --detect
-          sudo echo [conf]\ntools.system.package_manager:sudo=True\ntools.system.package_manager:mode=install >> ~/.conan/profiles/default
+          sudo conan profile update settings.compiler.libcxx=libstdc++11 default
           mkdir build && cd build
           sudo conan install ${{ github.workspace }} -c tools.system.package_manager:mode=install --build=missing 
 
