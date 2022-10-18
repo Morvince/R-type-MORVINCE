@@ -36,8 +36,8 @@ jobs:
         shell: bash
         run: |
           cd build
-          sudo export CONAN_SYSREQUIRES_MODE="enabled"
-          sudo export CONAN_SYSREQUIRES_SUDO="1"
+          export CONAN_SYSREQUIRES_MODE="enabled"
+          export CONAN_SYSREQUIRES_SUDO="1"
           cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-11 ${{ github.workspace }}
           cmake ${{ github.workspace }} -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
           cmake --build ${{ github.workspace }}/build
